@@ -1,4 +1,6 @@
-### Hi there 👋
+### 👋 Vanity Princess in Davao City: Now Online!
+
+Book an Appointment for our Gluta Drip Therapy At Home Service.
 
 <!--
 **vanityprincess/vanityprincess** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
