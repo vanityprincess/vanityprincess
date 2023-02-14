@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <header>
+        <div class="overlay">
+            <nav id="navcart">
+                <div class="row">
+                    <h4 style="margin-left: 30px;">Products > Cart</h4><br>
+                </div><br>
+                <div class="row">
+                    <div class="cart">
+                        <button type="button" id="button1" class="btn btn-secondary" onclick="window.history.back();" style="padding: 10px; text-decoration: none; color: white;">Go Back
+                        </button>    
+                        <button type="button" class="btn btn-secondary" style="cursor: none;">
+                            <ion-icon name="basket"></ion-icon>My Cart<span min="1"
+                            id="badge" 
+                            class="badge" 
+                            style="
+                            position: relative;
+                            top: -20px;
+                            right: -25px;
+                            padding: 10px 12px;
+                            border-radius: 50%;
+                            background-color: red;
+                            color: white;">0 </span>
+                        </button>
+                        <style>
+                          @media (max-width:425px) {
+                            #button1 {
+                              margin-left: 30px;
+                              }
+                            header {
+                              height: 200px;
+                            }  
+                          }
+                        </style>
+                    </div>
+                </div>
+            </nav>
+          </div>
+    </header>
+    
+    <div class="container-products" id="container-products">
+        <div class="product-header" >
+            <h6 class="product-title">PRODUCT</h6>
+            <h6 class="price sm-hide" style="border: none;">PRICE</h6>
+            <h6 class="quantity" id="quantity" style="border: none;">QUANTITY</h6>
+            <h6 class="quantity" id="qty" style="border: none;">QTY</h6>
+            <h6 class="total" style="border: none;">TOTAL</h6>
+        </div>
+        <div class="products" id="container-products">
+    </div>
+    <br><br><br><br>
+        <div class="container checkout">
+                <center><button type="button" class="btn btn-secondary" onclick="window.history.back();" >Add Other Items
+                </button>
+                <button type="button" class="btn btn-secondary" id="btncheckout" onclick="validateCart()">Checkout
+                </button>
+                <br><br>
+                <h6 id="demo3"></h6></center>
+        </div>
+       <br><br><br><br>
+
+
+<!------CHOOSE PAYMENT MODE----------------------
+    <div class="payment" id="paymentoptionscontainer" style="visibility: hidden;">
+        
+        
+        
+        <div class="row border">
+            <h3 style="text-align: center;">You may choose one of our Payment Methods:</h3>
+            <form >
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="cashradio" value="One" required>
+                        Pay with Cash after Home Service Session
+                        <label class="form-check-label" for="cashradio">
+                        </label>
+                </div>
+                <div class="form-check" >    
+                    <input class="form-check-input" type="radio" id="gcashradio" name="gridRadios" value="Two">
+                            Pay with Gcash or Bank Transfer
+                            <label class="form-check-label" for="gcashradio">
+                            </label>
+                            <br>
+                </div>            
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="creditcardradio" name="gridRadios" value="Three">
+                            Pay with Credit /or Debit Card
+                            <label class="form-check-label" for="creditcardradio">
+                            </label>
+                            <br><br>
+                </div>
+            </form>
+        </div>            
+    <div class="container">
+        <div class="row justify-content-center align-items-start g-2">
+            <div id="showOne" class="myDiv">
+	            <h4><strong>Cash Payment after Home Service Session</strong></h4>
+                <p>If choosing Cash Payment mode, the amount below already includes our Home Service fee and Gluta Drip Product of your choice, please fill out the form below.</p>
+                <h4>Amount to Pay:  </h4>
+                <h5 style="font-size: 2.5vh; color: black; font-weight: 600;">
+                    Grand Total = ₱<span id="demo" style="font-size: 2.5vh; color: black;">0</span>.00 
+                </h5>
+                <center><button type="button" class="btn btn-secondary" onclick="window.history.back()" >Add / Edit Items
+                </button></center>
+                
+                <br>
+                    <div class="row">
+                        <div class="container">
+                            <form id="MyForm" action="https://formsubmit.co/vanityprincessdavao@gmail.com" method="POST" class="was-validated">
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="fname">FIRST NAME</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input type="text" class="form-control" id="fname" name="firstname" placeholder="Your first name..." required>
+                                        <div class="valid-feedback">Valid</div>
+                                        <div class="invalid-feedback">Please fill out this field</div>
+                                </div><br>
+                                <div class="row">
+                                    <div class="col-25">
+                                      <label for="lname">LAST NAME</label>
+                                    </div>
+                                    <div class="col-75">
+                                      <input type="text"  class="form-control" id="lname" name="lastname" placeholder="Your last name..." style="width: inherit;" required>
+                                        <div class="valid-feedback">Valid</div>
+                                        <div class="invalid-feedback">Please fill out this field</div>
+                                    </div>
+                                  </div><br>
+                                  <div class="row">
+                                    <div class="col-25">
+                                      <label for="phone">CONTACT NO.</label>
+                                    </div>
+                                    <div class="col-75">
+                                      <input type="tel" class="form-control" id="phone" name="phone" placeholder="Your phone number..." pattern="[0-9]{11}" style="width: inherit; height: 8vh" required>
+                                        <p style="font-size: 10px; padding-bottom: 0; margin-bottom: 0;">Format Sample: 09175948919</p>
+                                        <div class="valid-feedback">Valid</div>
+                                        <div class="invalid-feedback">Please fill out this field</div>
+                                    </div>
+                                  </div><br>
+                                  <div class="row">
+                                    <div class="col-25">
+                                      <label for="email">EMAIL</label>
+                                    </div>
+                                    <div class="col-75">
+                                      <input class="form-control" type="email" id="email" name="email" placeholder="Your email..." style="width: inherit;" required>
+                                      <div class="valid-feedback">Valid</div>
+                                        <div class="invalid-feedback">Please fill out this field</div>
+                                    </div>
+                                  </div><br>
+                                  <div class="row">
+                                    <div class="col-25">
+                                      <label for="address">ADDRESS</label>
+                                    </div>
+                                    <div class="col-75">
+                                      <input type="text" class="form-control" id="address" placeholder="Your adress..." style="width: inherit;" required>
+                                      <div class="valid-feedback">Valid</div>
+                                        <div class="invalid-feedback">Please fill out this field</div>
+                                    </div>
+                                  </div><br>
+                                  <div class="row">
+                                    <div class="col-25">
+                                      <label for="cashmode">PAYMENT MODE</label>
+                                    </div>
+                                    <div class="col-75">
+                                      <select class="form-select" id="cashmode" name="CashMode" style="width: inherit; height: 7vh" required>
+                                        <option style="font-size: 2vh;" value="" selected></option>
+                                        <option style="font-size: 2vh;" value="Cash Payment Selected">Cash Payment Mode</option>
+                                      </select>
+                                    </div>
+                                  </div><br>
+                                  <div class="row">
+                                    <div class="col-25">
+                                      <label for="dateandtime">DATE | TIME OF APPOINTMENT</label>
+                                    </div>
+                                    <div class="col-75" style="overflow: auto;">
+                                      <input type="datetime-local" class="form-control" id="dateandtime" name="dateandtime" style="width: inherit; height: 8vh; overflow: auto;" required>
+                                      <div class="valid-feedback">Valid</div>
+                                        <div class="invalid-feedback">Please fill out this field</div>
+                                    </div>
+                                  </div><br>
+                                  <div class="row">
+                                    <div class="col-25">
+                                      <label for="product">Gluta Drip Product</label>
+                                    </div>
+                                    <div class="col-75">
+                                      <select class="form-select" id="product" name="Gluta_Drip_Product" style="width: inherit; height: 7vh" required>
+                                        <option style="font-size: 2vh;" value="" selected></option>
+                                        <option style="font-size: 2vh;" value="Cindyrella">Cindyrella</option>
+                                        <option style="font-size: 2vh;" value="AquaSkin">Aqua Skin<option>
+                                        <option style="font-size: 2vh;" value="Liponex">Liponex</option>
+                                      </select>
+                                    </div>
+                                  </div><br>
+                                  <div class="row">
+                                    <div class="col-25">
+                                      <label for="amount" class="form-label">Amount to Pay in Php</label>
+                                    </div>
+                                    <div class="col-75">
+                                      <input type="number" class="form-control" id="amount" name="Amount" min="1" max="100000" value="0" style="width: 150px; height: 6vh;">
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-25">
+                                      <label for="message">MESSAGE</label>
+                                    </div>
+                                    <div class="col-75">
+                                      <textarea id="message" name="message" placeholder="Your message..." rows="5" style="width: inherit;"></textarea>
+                                    </div>
+                                  </div><br>
+                                  
+                                  <div class="row">
+                                    <div class="col-25"></div>
+                                    <div class="col-75">
+                                      <div class="form-check">
+                                        <p style="font-size: 1.2vh; padding-bottom: 0; margin-bottom: 0;">Please check all to proceed</p>
+                                        <input class="form-check-input" type="checkbox" value="I agree to pay this amount after I have received service" id="checkbox1" required>
+                                        <label class="form-check-label" for="checkbox1" style="font-size: 1.5vh; padding-top: 0; margin-top: 0;">I agree that I am obligated to pay this amount to Vanity Princess after availing their services</label> 
+                                        <input class="form-check-input" type="checkbox" value="I understand my order cannot be cancelled" id="checkbox2" required>
+                                        <label class="form-check-label" for="checkbox2" style="font-size: 1.5vh; padding-top: 0; margin-top: 0;">I agree to the terms & conditions and understand that my appointment and order of product cannot be cancelled</label>
+                                        <input class="form-check-input" type="checkbox" value="I understand my order cannot be cancelled" id="checkbox3" required>
+                                        <label class="form-check-label" for="checkbox3" style="font-size: 1.5vh; padding-top: 0; margin-top: 0;">I agree and consent to the use of my submitted information in accordance with the Data Privacy Policy and Cookies Policy of Vanity Princess</label>
+                                        </div>
+                                    </div>
+                                  </div><br>
+                                  <div class="row">
+                                    <div class="col-50">
+                                      <button type="reset" class="btn btn-secondary" value="RESET" id="formbuttons" >RESET
+                                    </div><br><br>
+                                    <div class="col-50">
+                                      <button type="submit" class="btn btn-secondary" value="SUBMIT" id="formbuttons">SUBMIT
+                                      <input type="hidden" name="_next" value="https://vanityprincess.github.io/vanityprincess/">
+                                      <input type="hidden" name="_autoresponse" value="Thank you for ordering product/s and service/s from Vanity Princess. We are committed in providing you the best Gluta Drip Therapy At Home Services. By submitting the form, you understand that your order is final and can no longer be cancelled. Please expect us to contact you immediately using the details you have provided us. Thank you and have a good day.">
+                                    </div>
+                                  </div>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-start g-2">
+            <div id="showTwo" class="myDiv">
+                <h4><strong>Pay with Gcash or Bank Transfer </strong></h4>
+                <p>If choosing Gcash Payment mode, the amount below already includes our Home Service fee and Gluta Drip Product of your choice, please read the instructions on how to pay.</p>
+                <h4>Amount to Pay:  </h4>
+                <h5 style="font-size: 2.5vh; color: black; font-weight: 600;">
+                    Grand Total = ₱<span id="demo8" style="font-size: 2.5vh; color: black;">0</span>.00 
+                </h5>
+                <br>
+                
+                <br>
+                    <div class="row">
+                        <div class="container">
+                            <form id="MyForm" action="https://formsubmit.co/vanityprincessdavao@gmail.com" method="POST" class="was-validated">
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="fname">FIRST NAME</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input type="text" class="form-control" id="fname" name="firstname" placeholder="Your first name..." required>
+                                        <div class="valid-feedback">Valid</div>
+                                        <div class="invalid-feedback">Please fill out this field</div>
+                                </div><br>
+                                <div class="row">
+                                    <div class="col-25">
+                                      <label for="lname">LAST NAME</label>
+                                    </div>
+                                    <div class="col-75">
+                                      <input type="text"  class="form-control" id="lname" name="lastname" placeholder="Your last name..." style="width: inherit;" required>
+                                        <div class="valid-feedback">Valid</div>
+                                        <div class="invalid-feedback">Please fill out this field</div>
+                                    </div>
+                                  </div><br>
+                                  <div class="row">
+                                    <div class="col-25">
+                                      <label for="phone">CONTACT NO.</label>
+                                    </div>
+                                    <div class="col-75">
+                                      <input type="tel" class="form-control" id="phone" name="phone" placeholder="Your phone number..." pattern="[0-9]{11}" style="width: inherit; height: 8vh" required>
+                                        <p style="font-size: 10px; padding-bottom: 0; margin-bottom: 0;">Format Sample: 09175948919</p>
+                                        <div class="valid-feedback">Valid</div>
+                                        <div class="invalid-feedback">Please fill out this field</div>
+                                    </div>
+                                  </div><br>
+                                  <div class="row">
+                                    <div class="col-25">
+                                      <label for="email">EMAIL</label>
+                                    </div>
+                                    <div class="col-75">
+                                      <input class="form-control" type="email" id="email" name="email" placeholder="Your email..." style="width: inherit;" required>
+                                      <div class="valid-feedback">Valid</div>
+                                        <div class="invalid-feedback">Please fill out this field</div>
+                                    </div>
+                                  </div><br>
+                                  <div class="row">
+                                    <div class="col-25">
+                                      <label for="dateandtime">DATE | TIME OF APPOINTMENT</label>
+                                    </div>
+                                    <div class="col-75" style="overflow: auto;">
+                                      <input type="datetime-local" class="form-control" id="dateandtime" name="dateandtime" style="width: inherit; height: 8vh; overflow: auto;" required>
+                                      <div class="valid-feedback">Valid</div>
+                                        <div class="invalid-feedback">Please fill out this field</div>
+                                    </div>
+                                  </div><br>
+                                  
+                                  <div class="row">
+                                    <div class="col-50">
+                                      <button type="reset" class="btn btn-secondary" value="RESET" id="formbuttons" >RESET
+                                    </div><br><br>
+                                    <div class="col-50">
+                                      <button type="submit" class="btn btn-secondary" value="SUBMIT" id="formbuttons">SUBMIT
+                                      <input type="hidden" name="_next" value="https://vanityprincess.github.io/vanityprincess/">
+                                      <input type="hidden" name="_autoresponse" value="Thank you for ordering product/s and service/s from Vanity Princess. We are committed in providing you the best Gluta Drip Therapy At Home Services. By submitting the form, you understand and agreed that your order is FINAL AND CAN NO LONGER BE CANCELLED. Please expect us to contact you immediately using the information you have provided us, to discuss the details of your appointment, choice of product and Cash Payment Method right after availing our services. Thank you and have a good day.">
+                                    </div>
+                                  </div>
+                            </form>
+                        </div>
+
+                          
+                    </div>
+                    
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-start g-2">
+            <div id="showThree" class="myDiv">
+                <h4><strong>Pay with Credit /or Debit Card </strong></h4>
+                        
+
+                <div id="smart-button-container">
+                  <div style="text-align: center;">
+                    <div style="margin-bottom: 1.25rem;">
+                      <p>Gluta Drip Therapy</p>
+
+
+                      <select id="item-options">
+                        <option value="Cindyrella" price="1500">Cindyrella - 1500 PHP</option>
+                        <option value="Aqua Skin" price="1500">Aqua Skin - 1500 PHP</option>
+                        <option value="Liponex" price="1500">Liponex - 1500 PHP</option>
+                      </select>
+                      <select style="visibility: hidden" id="quantitySelect">
+                        <option value="1">1</option><option value="2">2</option>
+                        <option value="3">3</option><option value="4">4</option>
+                        <option value="5">5</option><option value="6">6</option>
+                        <option value="7">7</option><option value="8">8</option>
+                        <option value="9">9</option><option value="10">10</option>
+                        <option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option></select>
+                        <br><br><br>
+                        
+                  <div id="paypal-button-container"></div>
+                  </div>
+                </div>
+                <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=PHP" data-sdk-integration-source="button-factory"></script>
+                <script>
+                  function initPayPalButton() {
+                    var shipping = 0;
+                    var itemOptions = document.querySelector("#smart-button-container #item-options");
+                var quantity = parseInt(50);
+                var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
+                if (!isNaN(quantity)) {
+                  quantitySelect.style.visibility = "visible";
+                }
+                var orderDescription = 'Gluta Drip Therapy';
+                if(orderDescription === '') {
+                  orderDescription = 'Item';
+                }
+                paypal.Buttons({
+                  style: {
+                    shape: 'pill',
+                    color: 'gold',
+                    layout: 'vertical',
+                    label: 'pay',
+                    
+                  },
+                  createOrder: function(data, actions) {
+                    var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
+                    var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
+                    var tax = (0 === 0 || false) ? 0 : (selectedItemPrice * (parseFloat(0)/100));
+                    if(quantitySelect.options.length > 0) {
+                      quantity = parseInt(quantitySelect.options[quantitySelect.selectedIndex].value);
+                    } else {
+                      quantity = 1;
+                    }
+            
+                    tax *= quantity;
+                    tax = Math.round(tax * 100) / 100;
+                    var priceTotal = quantity * selectedItemPrice + parseFloat(shipping) + tax;
+                    priceTotal = Math.round(priceTotal * 100) / 100;
+                    var itemTotalValue = Math.round((selectedItemPrice * quantity) * 100) / 100;
+            
+                    return actions.order.create({
+                      purchase_units: [{
+                        description: orderDescription,
+                        amount: {
+                          currency_code: 'PHP',
+                          value: priceTotal,
+                          breakdown: {
+                            item_total: {
+                              currency_code: 'PHP',
+                              value: itemTotalValue,
+                            },
+                            shipping: {
+                              currency_code: 'PHP',
+                              value: shipping,
+                            },
+                            tax_total: {
+                              currency_code: 'PHP',
+                              value: tax,
+                            }
+                          }
+                        },
+                        items: [{
+                          name: selectedItemDescription,
+                          unit_amount: {
+                            currency_code: 'PHP',
+                            value: selectedItemPrice,
+                          },
+                          quantity: quantity
+                        }]
+                      }]
+                    });
+                  },
+                  onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(orderData) {
+                      
+                      // Full available details
+                      console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+            
+                      // Show a success message within this page, e.g.
+                      const element = document.getElementById('paypal-button-container');
+                      element.innerHTML = '';
+                      element.innerHTML = '<h3>Thank you for your payment!</h3>';
+            
+                      // Or go to another URL:  actions.redirect('thank_you.html');
+            
+                    });
+                  },
+                  onError: function(err) {
+                    console.log(err);
+                  },
+                }).render('#paypal-button-container');
+              }
+              initPayPalButton();
+                </script>
+                  
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  ----CHOOSE PAYMENT MODE - moved to checkout,html-------------------------->
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    
+    <!------JS for GRAND TOTAL AMOUNT TO PAY-->
+    <script>
+        let cart = localStorage.getItem("totalCost");
+            cart = parseInt(cart).toLocaleString();
+        let n = cart.valueOf();
+            document.getElementById('demo').innerHTML = n;
+            document.getElementById('demo8').innerHTML = n;
+
+        
+        let addToCart = button => {
+            let s = button.getAttribute('data-product') + " worth ";             
+            s += button.getAttribute('data-price');
+            
+            alert('You just added ' + " " + s + " " + 'to your cart.');
+        
+        }
+      </script>
+
+    <!------JS for CHOOSE PAYMENT MODE-->
+    <script>
+        $(document).ready(function(){
+            $('input[type="radio"]').click(function(){
+                var demovalue = $(this).val(); 
+                $("div.myDiv").hide();
+                $("#show"+demovalue).show();
+            });
+        });
+        </script>
+        <script>
+            function showElement() {
+            element = document.querySelector('.payment');
+            element.style.visibility = 'visible';
+        }
+        </script>
+
+    <script>
+        function validateCart() {
+        const qty = localStorage.getItem('cartNumbers');
+        const itemQty = parseInt(qty);
+        const url = "checkout.html"
+        
+
+        if (itemQty > 0) {
+            window.location = url;
+            
+        } else {
+            
+            document.getElementById("demo3").innerHTML = "Please add items to your cart";
+        }
+      } 
+    </script>
+        
+</body>
+</html>
