@@ -1,0 +1,329 @@
+body {
+    /*background-color: rgb(245, 245, 245);*/
+    background-color: white;
+    width: 100vw;
+}
+/*CSS for FB with tooltip*/
+.wrapper .icon{
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin: 10px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 18px;
+    display: inline-block;
+    align-items: center;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    color: #333;
+    text-decoration: none;
+}
+.wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    line-height: 1.5;
+    font-size: 14px;
+    background-color: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background-color: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+    background-color: #3b5999;
+    color: #ffffff;
+}
+
+
+.img-comp-container {
+    position: relative;
+    height: 300px; 
+}
+
+.img-comp-img {
+    position: absolute;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.img-comp-img img {
+    display: block;
+    vertical-align: middle;
+}
+
+.img-comp-slider {
+    position: absolute;
+    z-index: 9;
+    cursor: ew-resize;
+    width: 40px;
+    height: 40px;
+    opacity: 0.7;
+    border-radius: 50%;
+    background-image: url('images/vanitylogo.png');
+    background-size: cover;
+}
+
+@media screen and (min-width: 991px) {
+    #linebreak {
+        display: none;
+    }
+}
+.responsive {
+    width: 100%; 
+    height: auto;
+}
+
+/*CSS for wipeout comparison*/
+@property --radius {
+    syntax: "<percentage>";
+    inherits: true;
+    initial-value: -5%;
+  }
+  
+@keyframes scene-transition {
+    to {
+      --radius: 105%;
+}
+  }
+.scenes {
+    position: relative;
+    /*outline: 2px solid #ccc;*/
+    height: 250px;
+}
+
+.scene-1,
+.scene-2 {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+}
+.scene-1 {
+    background-image: url('images/dark_full\ img.jpg');
+}
+
+.scene-2 {
+    background-image: url('images/light_full\ img.jpg');
+    z-index: -1;
+    -webkit-mask-image: radial-gradient(
+      circle,
+      #fff calc(var(--radius) - 5%),
+      transparent calc(var(--radius) + 5%)
+    );
+}
+.scenes:is(:hover, :focus) .scene-2 {
+    z-index: 1;
+    animation: scene-transition 2s linear forwards;
+}
+.scene-title {
+    position: absolute;
+    max-width: 45%;
+    margin: min(40px, 4vw);
+    font-size: 1.25em;
+}
+.scene-1 .scene-title {
+    top: 0;
+    right: 0;
+    color: black;
+    text-align: center;
+}
+.scene-2 .scene-title {
+    bottom: 0;
+    left: 0;
+    color: black;
+    text-align: center;
+}
+/* everything else */
+
+     
+#column01 {
+    place-items: center;
+    margin: 0;
+    padding: 0;
+    height: 76vh;
+}
+#wrapperblackandwhite {
+    display: grid;
+    width: min(1000px, 100%);
+}
+.visualizer {
+    display: flex;
+    justify-content: center;
+}
+.visualizer-frame {
+    position: relative;
+    width: min(150px, 25vw);
+    aspect-ratio: 2.4 / 1;
+    outline: 2px solid #ccc;
+    background-color: #333;
+    background-image: linear-gradient(
+        45deg,
+        #444 25%,
+        transparent 25%,
+        transparent 75%,
+        #444 75%
+      ),
+      linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%);
+    background-size: 16px 16px, 16px 16px;
+    background-position: 0 0, 8px 8px;
+}
+.visualizer-mask {
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 0 2px #111;
+}
+.scenes:is(:hover, :focus) + .visualizer .visualizer-mask {
+    background-image: radial-gradient(
+      circle,
+      #fff calc(var(--radius) - 5%),
+      transparent calc(var(--radius) + 5%)
+    );
+    animation: scene-transition 2s linear forwards;
+}  
+/*CSS First Section*/
+#vanitylogofirstsection {
+    width: inherit; height: inherit;
+}
+/*CSS Second Section and typing text*/
+.section2p {
+    text-align: justify;
+}
+.container p span.cursor {
+    display: inline-block;
+    background-color: #ccc;
+    margin-left: 0.1rem;
+    width: 3px;
+    animation: blink 1s infinite;
+    }
+.container p span.cursor.typing {
+    animation: none;
+}
+@keyframes blink {
+    0%  { background-color: #ccc; }
+    49% { background-color: #ccc; }
+    50% { background-color: transparent; }
+    99% { background-color: transparent; }
+    100%  { background-color: #ccc; }
+}
+/*CSS Third Section*/
+.section3 {
+    padding: 40px;
+}
+#modelsection03 {
+    width: 250px;
+    padding-bottom: 60px;
+}
+/*CSS for Fourth Section*/
+.section4 ul {
+    padding-left: 35px;
+    padding-right: 20px;
+    text-align: justify;
+}
+/*CSS for Fifth Section*/
+#modelsection05 {
+    width: 250px;
+    padding-top: 50px;
+}
+.section5 h2 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.section5 ul {
+    margin-left: -18px;
+    padding-bottom: 60px;
+}
+
+/*CSS for Sixth Section*/
+.section6B p {
+    font-size: 22px;
+    font-weight: 600;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#cindyrellaLogo {
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#aquaskinLogo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#liponexLogo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+}
+/*CSS for Seventh Section*/
+.section7A {
+    padding: 35px;
+}
+#eslais_RegisteredNurse {
+    width: 260px;
+}
+/*CSS for Contact Page*/
+.contact {
+    width: 80vw;
+}
+/*CSS for FAQ Page*/
+
+#faqHeader {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/*CSS for Footer Section*/
+.sectionfooter {
+    padding: 35px;
+
+}
+#vanitylogoFooter {
+    width: 250px;
+}
+#emailAdd {
+    font-size: 13px;
+}
+
+
+/*img {
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+    
+    transition: transform 0.2s;
+}
+img:hover {
+    transform: translateY(-15px);
+    transform: translateX(-15px);
+}*/
+

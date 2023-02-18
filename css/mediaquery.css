@@ -1,0 +1,218 @@
+/*MQ for first section, first column, wipeout img*/
+
+@media (min-width: 321px) {
+    .scenes {
+        height: 330px;
+    }
+  }
+@media (max-width: 321px) {
+  #collagen {
+    padding-left: 43px;
+  }
+  #insomnia {
+    padding-left: 43px;
+  }
+}  
+@media (min-width: 376px) {
+  #linebreaksection2 {
+    display: none;
+  }
+}
+@media (min-width: 375px) {
+  #modelsection03 {
+    width: 300px;
+  }
+  #modelsection05 {
+    width: 300px;
+  }
+  #eslais_RegisteredNurse {
+    width: 300px;
+  }
+  #vanitylogoFooter {
+    width: 320px;
+  }
+  #emailAdd {
+    font-size: 16px;
+  }
+}
+@media (min-width: 425px) {
+  #modelsection03 {
+    width: 350px;
+  }
+  .section4 ul {
+    padding-left: 40px;
+    padding-right: 30px;
+    text-align: justify;
+  }
+  .section4 h2 {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+  #modelsection05 {
+    width: 350px;
+  }
+  .section5 ul {
+    margin-left: -8px;
+  }
+  #eslais_RegisteredNurse {
+    width: 350px;
+  }
+  #vanitylogoFooter {
+    width: 335px;
+  }
+  #emailAdd {
+    font-size: 18px;
+  }
+  .sectionfooter {
+    padding: 43px;
+    margin-left: 10px;
+  }
+
+}
+@media (max-width: 425px) {
+  .section9 {
+    width: 300px;
+  }
+}
+@media (min-width: 767px) {
+  .section2p {
+    text-align: center;
+  }
+}
+@media (max-width: 767px) {
+  #linebreaksection4 {
+    display: none;
+  }
+}   
+@media (min-width: 768px) {
+  .scenes {
+      height: 700px;
+  }
+  #linebreaksection2_part2 {
+    display: none;
+  }
+  .section3 {
+    padding: 120px;
+  }
+  #modelsection03 {
+    width: 550px;
+  }
+  .section4 ul {
+    padding-left: 100px;
+    padding-right: 80px;
+  }
+  #modelsection05 {
+    width: 550px;
+  }
+  .section5 ul {
+    margin-left: 100px;
+  }
+  .section6B p {
+    font-size: 25px;
+    font-weight: 600;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  #liponexLogo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+  }
+  #section6Brow2 {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .section7A {
+    padding: 100px;
+  }
+  #eslais_RegisteredNurse {
+    width: 550px;
+  }
+  #vanitylogoFooter {
+    width: 230px;
+  }
+  #emailAdd {
+    font-size: 10px;
+  }
+  .sectionfooter {
+    padding: 20px;
+    margin-left: 1px;
+    }
+  #linebreakfooter {
+    display: none;
+  }
+  .sectionfooterB {
+    margin-left: -45px;
+  }     
+}
+@media (min-width: 1024px) {
+    .scenes {
+        height: 500px;
+    }
+    #vanitylogofirstsection {
+      height: 500px;
+      
+    }
+    .section3 {
+      padding: 130px;
+    }
+    #modelsection03 {
+      padding-bottom: 0px;
+      margin-top: 5%;
+    }
+    .section4 {
+      padding: 50px;
+      padding-left: 120px;
+      padding-right: 120px;
+      }
+    .section4 h2 {
+      font-size: 50px;
+
+    }
+    #modelsection05 {
+      
+      margin-top: 5%;
+      margin-left: 115px;
+    }
+    #section5column2 {
+      padding: 60px;
+      margin-top: 100px;
+    }
+    .section6B p {
+      font-size: 35px;
+      font-weight: 600;
+      
+    }
+    #section6Brow2 {
+      padding-top: 25px;
+    }
+    #liponexLogo {
+      width: 250px;
+      display: block;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .section7A {
+      padding: 0px;
+      padding-left: 120px;
+      margin-top: 80px;
+    }
+    #eslais_RegisteredNurse {
+      width: 550px;
+      display: block;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    #emailAdd {
+      font-size: 13px;
+    }
+    .contact {
+      width: 55vw;
+    }
+  }
+@media (max-width: 1023px) {
+  #linebreaksection7 {
+    display: none;
+  }
+}
