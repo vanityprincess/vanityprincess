@@ -240,7 +240,8 @@ body {
 }
 #modelsection03 {
     width: 250px;
-    padding-bottom: 60px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.692);
+    margin-bottom: 60px;
 }
 /*CSS for Fourth Section*/
 .section4 ul {
@@ -251,7 +252,8 @@ body {
 /*CSS for Fifth Section*/
 #modelsection05 {
     width: 250px;
-    padding-top: 50px;
+    margin-top: 50px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.692);
 }
 .section5 h2 {
     padding-left: 20px;
@@ -274,17 +276,20 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.692);
 }
 #aquaskinLogo {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.692);
 }
 #liponexLogo {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 250px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.692);
 }
 /*CSS for Seventh Section*/
 .section7A {
@@ -292,6 +297,7 @@ body {
 }
 #eslais_RegisteredNurse {
     width: 260px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.692);
 }
 /*CSS for Contact Page*/
 .contact {
@@ -311,10 +317,14 @@ body {
 }
 #vanitylogoFooter {
     width: 250px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.692);
 }
 #emailAdd {
     font-size: 13px;
 }
+
+/*CSS for Scroll In Text or Image*/
+
 
 
 /*img {
